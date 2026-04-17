@@ -1,0 +1,62 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #CEFF00;
+}
+
+/* Animations */
+@keyframes bounce-slow {
+    0%, 100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s infinite;
+}
+
+/* Base resets for mobile */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hide mobile CTA behind footer when scrolled to very bottom */
+.footer-visible #mobile-cta {
+    transform: translateY(100%);
+}
+
+/* Global Compactness / Zoom Out Effect */
+html {
+    scroll-behavior: smooth;
+    /* This makes the whole site feel more professional and high-end */
+}
+
+@media (min-width: 1024px) {
+    body {
+        zoom: 0.90;
+        -moz-transform: scale(0.90);
+        -moz-transform-origin: top center;
+    }
+}
+
+/* Ensure fixed elements stay fixed even with zoom/scale */
+#navbar, #mobile-cta, .fixed {
+    zoom: 1 !important;
+}
